@@ -58,3 +58,27 @@ fecha_ingreso DATETIME NOT NULL,
 color VARCHAR (30)NOT NULL,
 
 );
+CREATE TABLE VentasAutos (
+    id_venta INT  PRIMARY KEY,
+    id_cliente INT,
+    id_auto INT UNIQUE,
+    id_vendedor INT,
+    fecha_venta DATE NOT NULL,
+    precio_final DECIMAL(10,2),
+    metodo_pago VARCHAR(30),
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente),
+    FOREIGN KEY (id_auto) REFERENCES Autos(id_auto),
+    FOREIGN KEY (id_vendedor) REFERENCES Vendedores(id_vendedor)
+);
+CREATE TABLE VentasAutos (
+    id_venta INT  PRIMARY KEY,
+    id_cliente INT,
+    id_auto INT UNIQUE,
+    id_vendedor INT,
+    fecha_venta DATE NOT NULL,
+    precio_final DECIMAL(10,2),
+    metodo_pago VARCHAR(30),
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente),
+    FOREIGN KEY (id_auto) REFERENCES Autos(id_auto),
+    FOREIGN KEY (id_vendedor) REFERENCES Vendedores(id_vendedor)
+);
